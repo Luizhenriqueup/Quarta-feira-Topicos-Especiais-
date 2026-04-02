@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>AAAAAAAAAAAAAAAAAAA SOCORRO</h1>
+
+    <script>
+      //let jsonString = `[{"id":"1","name":"helton"}]`;
+      let jsonString = "eu sou um JSON";
+      try {
+        let user = JSON.parse(jsonString);
+        console.log(`Usuario: ${user}`);
+        console.log(`usuraio: ${user[0].id} | ${user[0].name}`);
+      } catch (error) {
+        console.error(`Erro ao conveter string em objeto: ${error}`);
+      }
+      console.log("chegou ate aqui");
+
+      try {
+        console.log("conectando no banco de dados");
+        let jsonString = `[{"id":"1","name":"helton"}]`;
+        let carro = JSON.parse(jsonString);
+        console.log("conexão finalizada com sucesso");
+      } catch (error) {
+        console.error(`Falha ao conectar ao banco: ${error}`);
+      } finally {
+        console.log("fechando a conexão com o banco de dados!");
+      }
+
+      function verificaMaiorIdade(idade){
+        if(!idade){
+            throw new Error("O parametro idade é obrigatorio");
+        }
+
+        if(idade < 0){
+            throw new Error("a idade não pode ser negativo");
+        }
+        if(idade >=18){
+            return "E maior de idade";
+        }else{
+            return "E menor de idade";
+        }
+      }
+      try{
+      console.log("19: ", verificaMaiorIdade(19));
+      console.log("11: ", verificaMaiorIdade(11));
+      //console.log("Nada", verificaMaiorIdade());
+      console.log("-20", verificaMaiorIdade(-20));
+      }catch(error){
+        console.error("deu ruim", error);
+      }
+
+      console.log("chegou no fim");
+      
+    </script>
+  </body>
+</html>
