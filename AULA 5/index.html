@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Funcões</title>
+
+    <script>
+      // função declarada
+      function cumprimentaHelton(nome, idade, cidade) {
+        console.log(
+          `olá, ${nome} de idade ${idade} da cidade ${cidade} seja bem vindo`,
+        );
+      }
+      //cumprimentahelton
+      cumprimentaHelton("helton", 25, "Londrina");
+
+      let recuperaMarca = function (modelo) {
+        if (modelo === "gol") {
+          return "volksawgen";
+        } else if (modelo === "Palio") {
+          return "fiat";
+        } else {
+          return "não encontrado";
+        }
+      };
+      let retorno = recuperaMarca("Palio");
+      console.log("retorno: ", retorno);
+
+      //ARROW FUNCTION SIMPLES
+      let superheroi = () => console.log("Spiderman");
+      superheroi();
+
+      // ARROW FUNCTION COM PASSAGEM DA PARAMETROS
+      let superheroiUP = (nome) => console.log("super", nome);
+      superheroiUP("helton");
+
+      //ARROW FUNCTION COM RETORNO
+      let superPoder = () => "deixar todos carecas";
+      let retornoSP = superPoder();
+      console.log("o super poder é", retornoSP);
+
+      // ARROW FUNCTION COM PASSAGEM DE PARAMETROS E RETORNO (COMPLETA)
+      let completa = (nome, poder) =>
+        `Super heroi: super-${nome} com o super poder: ${poder}`;
+      console.log(completa("juliana", "ser pica em PHP"));
+
+      //ARROW FUNCTION COM PASSAGEM UNICA COM PARAMETRO
+      let simpleSimples = (aluno) => `Bem vindo ${aluno}`;
+      console.log(simpleSimples("alex"));
+
+      //ARROW FUNCTION COM PASSAGEM UNICA DE PARAMETRO E RETORNO
+      let dobrar = n => n * 2;
+      console.log(dobrar(10));
+
+
+      let sabor = fruta => {
+        if (fruta ===  "abacaxi"){
+            return "Azedo"
+        }else if (Fruta === "Maça"){
+            return "doce"
+        }else{
+            return "Não encontrado"
+        }
+    }
+    //REST PARAMETER EM UMA FUNCAO DECLARADA
+    function imprimeCarnes(...carnes){
+        //FUNCTION INTERNA TBN DECLARADA
+        function comoImprimeAsCarnes(acumulado, atual){
+            return `${acumulado} - ${atual}`;
+        }
+
+        return carnes.reduce(comoImprimeAsCarnes);
+    }
+    console.log(imprimeCarnes('fraldinha', 'ancho', 'costela'));
+
+    let imprimeBebidas = (...bebidas) => bebidas.reduce((anterior, atual) => anterior + " - " + atual, "")
+    console.log(imprimeBebidas("coca-cola", "Coca-zero", "sprite" ));
+
+
+    // SITE PARA ESTUDO w3 schools
+    </script>
+
+  </head>
+  <body>
+    <h1>AULA 05 Funcões</h1>
+  </body>
+</html>
